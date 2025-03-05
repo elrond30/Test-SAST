@@ -15,10 +15,6 @@ on:
   pull_request:
     paths-ignore:
       - '.github/**'
-      - '.docker/**'
-      - '.ebextensions/**'
-      - '.elasticbeanstalk/**'
-      - '.platform/**'
       - '**/*.json'
   schedule:
     - cron: '35 0 * * 6'
