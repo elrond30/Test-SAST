@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: ./
+    # Dependabot security updates are always triggered by a security advisory, rather than running according to the schedule
+    schedule:
+      interval: daily
+    # Limit number of open pull requests for version updates
+    open-pull-requests-limit: 0
+    # Allow both direct and indirect updates for all packages.
+    allow:
+      - dependency-type: 'all'
+    # Always increase the minimum version requirement to match the new version
+    versioning-strategy: 'increase'
+    commit-message:
+      # Prefix all commit messages
+      prefix: '(Security) '
+    # Raise all npm pull requests with reviewers
+    reviewers:
+      - 'elrond30'
+    # Raise all npm pull requests with assignees
+    assignees:
+      - 'elrond30'
