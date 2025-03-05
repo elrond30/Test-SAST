@@ -1,0 +1,32 @@
+{
+  "name": "cleaner",
+  "version": "1.0.0",
+  "description": "k8s ChronJob for cleaning up unused WrongSecrets instances.",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**"
+  },
+  "author": "iteratec GmbH",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@kubernetes/client-node": "^0.22.2",
+    "jest-date-mock": "^1.0.10",
+    "supertest": "^7.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.3.3"
+  },
+  "overrides": {
+    "@kubernetes/client-node": {
+      "openid-client": "5.7.1"
+    }
+  }
+}
