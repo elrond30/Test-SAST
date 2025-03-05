@@ -12,11 +12,12 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    paths-ignore:
+      - '.github/**'
+      - '**/*.json'
+  schedule:
+    - cron: '35 0 * * 6'
 
 jobs:
   analyze:
@@ -43,6 +44,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+        config-file: .github/codeQL/codeql-config.yml
         # If you wish to specify custom queries, you can do so here or in a config file.
         # By default, queries listed here will override any specified in a config file.
         # Prefix the list here with "+" to use these queries and those in the config file.
