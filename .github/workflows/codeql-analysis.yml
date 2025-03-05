@@ -12,11 +12,16 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ "main" ]
+    paths-ignore:
+      - '.github/**'
+      - '.docker/**'
+      - '.ebextensions/**'
+      - '.elasticbeanstalk/**'
+      - '.platform/**'
+      - '**/*.json'
+  schedule:
+    - cron: '35 0 * * 6'
 
 jobs:
   analyze:
